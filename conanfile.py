@@ -1,8 +1,8 @@
 from conans import ConanFile, tools, AutoToolsBuildEnvironment, CMake
 
 
-class Libittnotify(ConanFile):
-    name = "libittnotify"
+class Libittapi(ConanFile):
+    name = "ittapi"
     version = "3.21.2"
     license = "https://github.com/intel/ittapi/tree/master/LICENSES"
     author = "Pavel Davydov pdavydov108@gmail.com"
@@ -22,7 +22,7 @@ class Libittnotify(ConanFile):
 
     def package(self):
         self.copy("*.h")
-        self.copy("*.a", src="bin")
+        self.copy("*.a", src="bin", dst='lib')
 
     def package_info(self):
-        self.cpp_info.libs = ["libittnotify"]
+        self.cpp_info.libs = ["ittnotify"]
